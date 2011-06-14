@@ -7,10 +7,6 @@ import os
 #actualmente conectado
 
 
-#Definiendo algunas variables
-
-#outfile=subred+"_ip.list"
-
 def usage():
      print "ip_list.py [INTERFACE] [IP]/[MASKBITS]"
 
