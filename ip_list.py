@@ -8,7 +8,7 @@ import os
 
 
 def usage():
-     print "ip_list.py [INTERFACE] [IP]/[MASKBITS]"
+     print ("ip_list.py [INTERFACE] [IP]/[MASKBITS]")
 
 def check_arp_scan():
     proc = subprocess.Popen("dpkg --status arp-scan | grep 'ok installed'", shell=True, stdout=subprocess.PIPE)
@@ -18,7 +18,7 @@ def check_arp_scan():
         pass
 
     else:
-        print "please install arp-scan: apt-get install -y arp-scan"
+        print ("please install arp-scan: apt-get install -y arp-scan")
 
 
 def arp_scan():
@@ -31,7 +31,7 @@ def arp_scan():
         proc = subprocess.Popen("arp-scan --interface="+sys.argv[1]+" "+sys.argv[2]+" | grep -E '([[:digit:]]{1,3}\.){3}' | cut -f 1",
             shell=True, stdout=subprocess.PIPE)
         stdout_value = proc.communicate()[0]
-        print stdout_value
+        print(stdout_value)
 
 def check_root():
     if os.getuid() != 0:
@@ -44,4 +44,4 @@ if __name__ == '__main__':
         check_arp_scan()
         arp_scan()
     else:
-        print 'You need to be root!'
+        print ('You need to be root!')

@@ -54,7 +54,7 @@ while LONGITUD > 0:
 #           sys.stdout.write(ALFABETO[contadores[i]])
 #       sys.stdout.write("\n")
         clave = file.getvalue()
-        print clave
+        print(clave)
       if VERBOSE == True:
         if (cont % 600000 == 0) and (cont != 0):
           progreso = cont*100.0/variacionesConRepeticion                
